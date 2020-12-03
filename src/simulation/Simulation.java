@@ -10,7 +10,7 @@ public class Simulation {
 	
 
 	public static void main(String[] args) {
-		System.out.println("Gambling Simulation\nTotal Available bet: "+TOTALSTAKE);
+		System.out.println("Gambling Simulation\nTotal Available bet per day: "+TOTALSTAKE);
 		Bettingdays();
 	
 	}
@@ -28,9 +28,9 @@ public class Simulation {
 		}
 		if(totalwinlose>0) { 
 		System.out.println("Total stake Won: "+totalwinlose);
-		if (totalwinlose<0) {
-			System.out.println("Total stake Lost: "+totalwinlose*-1);
 		}
+		else if (totalwinlose<0) {
+			System.out.println("Total stake Lost: "+totalwinlose*-1);
 		} else {
 			System.out.println("No win nor lost: "+totalwinlose);
 		}
