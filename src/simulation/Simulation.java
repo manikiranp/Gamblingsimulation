@@ -3,31 +3,30 @@ package simulation;
 import java.util.Random;
 
 public class Simulation {
-	 static final int totalstake=100;
-	 static int updatedstake=100;
-	
-	 static final int dailybet=1;
+	 static final int TOTALSTAKE=100;
+	 static int updatedstake=TOTALSTAKE;
+	 static final int DAILYBET=1;
 
 	public static void main(String[] args) {
-		System.out.println("Gambling Simulation\nTotal Available bet: "+totalstake);
-		betting();
+		System.out.println("Gambling Simulation\nTotal Available bet: "+TOTALSTAKE);
+		int betoutcome=betting();
 	
 
 	}
 
-	private static void betting() {
+	private static int betting() {
 		
 		Random random=new Random();
 		int outcome=random.nextInt(2);
 		if(outcome==1) {
 			System.out.println("Won the bet!");
-			updatedstake=updatedstake+dailybet;
+			updatedstake=updatedstake+DAILYBET;
 		} else {
 			System.out.println("Lost the bet!");
-			updatedstake=updatedstake-dailybet;
+			updatedstake=updatedstake-DAILYBET;
 		}
 		System.out.println("Remaining stake: "+updatedstake);
-		
+		return outcome;
 	}
 
 }
