@@ -29,10 +29,10 @@ public class Simulation {
 		int outcome=random.nextInt(2);
 		if(outcome==1) {
 			System.out.println("Won the bet!");
-			updatedstake=updatedstake+DAILYBET;
+			updatedstake+=DAILYBET;
 		} else {
 			System.out.println("Lost the bet!");
-			updatedstake=updatedstake-DAILYBET;
+			updatedstake-=DAILYBET;
 		}
 		System.out.println("Remaining stake: "+updatedstake);
 		return outcome;
