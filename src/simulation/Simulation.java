@@ -10,9 +10,18 @@ public class Simulation {
 	public static void main(String[] args) {
 		System.out.println("Gambling Simulation\nTotal Available bet: "+TOTALSTAKE);
 		int betoutcome=betting();
+		Bettinglimit();
 	
 
 	}
+
+	private static void Bettinglimit() {
+		while((updatedstake<(TOTALSTAKE*1.5)) && (updatedstake>(TOTALSTAKE*0.5))) {
+			betting();	
+		}
+		
+		
+	} 
 
 	private static int betting() {
 		
