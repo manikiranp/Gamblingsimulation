@@ -6,20 +6,43 @@ public class Simulation {
 	 static final int TOTALSTAKE=100;
 	 static int updatedstake=TOTALSTAKE;
 	 static final int DAILYBET=1;
+	static  int dailyresult=0;
 
 	public static void main(String[] args) {
 		System.out.println("Gambling Simulation\nTotal Available bet: "+TOTALSTAKE);
-		int betoutcome=betting();
-		Bettinglimit();
+		//int result=Bettinglimit();
+		Betting20days();
+		
 	
 
 	}
 
-	private static void Bettinglimit() {
+	private static void Betting20days() {
+		int day=1;
+		int totalwinlose=0;
+		while(day<=20) {
+			Bettinglimit();
+			day++;
+			totalwinlose+=dailyresult;
+		} 
+		
+		System.out.println("Total stake won or lose: "+totalwinlose);
+		
+	}
+
+	private static int Bettinglimit() {
+		
 		while((updatedstake<(TOTALSTAKE*1.5)) && (updatedstake>(TOTALSTAKE*0.5))) {
-			betting();	
+			betting();
+			
 		}
 		
+			if(updatedstake>0) {
+				dailyresult=updatedstake-TOTALSTAKE;
+			} else {
+				dailyresult=updatedstake-TOTALSTAKE;
+			}
+		return dailyresult;
 		
 	} 
 
